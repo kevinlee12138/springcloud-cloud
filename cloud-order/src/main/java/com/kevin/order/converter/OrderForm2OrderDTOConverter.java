@@ -1,7 +1,7 @@
 package com.kevin.order.converter;
 
-import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.kevin.order.dataobject.OrderDetail;
 import com.kevin.order.dto.OrderDTO;
 import com.kevin.order.enums.ResultEnum;
