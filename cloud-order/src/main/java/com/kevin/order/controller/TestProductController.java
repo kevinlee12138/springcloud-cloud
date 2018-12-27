@@ -1,11 +1,15 @@
 package com.kevin.order.controller;
 
 import com.kevin.order.client.ProductClient;
+import com.kevin.order.dataobject.ProductInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -29,5 +33,12 @@ public class TestProductController {
         String msg = productClient.getMsg();
         log.info("msg={}",msg);
         return msg;
+    }
+
+    @GetMapping("/getProductList")
+    public String getProductList(){
+        List<ProductInfo> productInfos =  productClient.listForOrder(Arrays.asList("157875196366160022","157875227953464068"));
+        log.info("product={}",productInfos);
+        return "ok";
     }
 }

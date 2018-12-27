@@ -22,4 +22,9 @@ public class ProductInfoRepositoryTest extends CloudProductApplicationTests {
         Assert.assertTrue(list.size() > 0);
     }
 
+    @Test
+    public void findByProductIdIn() throws Exception {
+        List<ProductInfo> list = productInfoRepository.findByProductIdIn(Arrays.asList("157875196366160022", "157875227953464068"));
+        Assert.assertTrue(list.size() > 0);
+    }
 }
