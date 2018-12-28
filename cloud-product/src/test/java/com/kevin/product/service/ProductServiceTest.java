@@ -3,11 +3,13 @@ package com.kevin.product.service;
 
 import com.kevin.product.CloudProductApplicationTests;
 import com.kevin.product.dataObject.ProductInfo;
+import com.kevin.product.dto.DecreaseStockInput;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +29,11 @@ public class ProductServiceTest extends CloudProductApplicationTests {
         Assert.assertTrue(list.size() > 0);
     }
 
+    @Test
+    public void decreaseStock() throws Exception {
+        DecreaseStockInput decreaseStockInput = new DecreaseStockInput("157875196366160022",1);
+        productService.decreaseStock(Arrays.asList(decreaseStockInput));
+    }
 
 
 }

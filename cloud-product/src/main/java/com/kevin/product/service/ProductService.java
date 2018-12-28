@@ -2,6 +2,8 @@ package com.kevin.product.service;
 
 
 import com.kevin.product.dataObject.ProductInfo;
+import com.kevin.product.dto.CartDto;
+import com.kevin.product.dto.DecreaseStockInput;
 
 import java.util.List;
 
@@ -17,4 +19,6 @@ public interface ProductService {
     List<ProductInfo> findUpAll();
 
     List<ProductInfo> findList(List<String> productIdList);
+
+    void decreaseStock(List<DecreaseStockInput> cartDtoList);
 }
