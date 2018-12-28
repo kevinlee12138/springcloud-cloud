@@ -1,5 +1,6 @@
 package com.kevin.order.client;
 
+import com.kevin.order.dataobject.DecreaseStockInput;
 import com.kevin.order.dataobject.ProductInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,5 +16,8 @@ public interface ProductClient {
     String getMsg();
 
     @PostMapping("/product/listForOrder")
-    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList);
+    List<ProductInfo> listForOrder(@RequestBody List<String> productIdList);
+
+    @PostMapping("/product/decreaseStock")
+    void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList);
 }
