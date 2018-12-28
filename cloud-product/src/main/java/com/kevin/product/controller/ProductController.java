@@ -6,6 +6,7 @@ import com.kevin.product.VO.ProductVO;
 import com.kevin.product.VO.ResultVO;
 import com.kevin.product.dataObject.ProductCategory;
 import com.kevin.product.dataObject.ProductInfo;
+import com.kevin.product.dto.DecreaseStockInput;
 import com.kevin.product.service.CategoryService;
 import com.kevin.product.service.ProductService;
 import com.kevin.product.utils.ResultVOUtil;
@@ -78,4 +79,8 @@ public class ProductController {
         return productService.findList(productIdList);
     }
 
+    @PostMapping("/decreaseStock")
+    public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {
+        productService.decreaseStock(decreaseStockInputList);
+    }
 }
